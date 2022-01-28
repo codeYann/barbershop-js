@@ -15,6 +15,7 @@ module.exports = {
         FROM cliente
       `);
       res.status(200).send(response.rows);
+      // await client.end();
     } catch (err) { 
       console.err(err);
     }
@@ -22,12 +23,23 @@ module.exports = {
   async store(req, res) {
     try {
       const {id, nome, email, senha, nascimento} = req.body;
-      console.log(id, nome, email, senha, nascimento);
-      const response = await client.query(`
-        INSERT INTO cliente (id_cliente, nome_cliente, senha, dt_nascimento, email) 
-        VALUES (${id}, ${nome}, ${encrypt(senha)}, ${nascimento}, ${email})
+      const response = await client.query(`INSERT INTO cliente 
+      (id_cliente, nome_cliente, senha, dt_nascimento, email) 
+      VALUES('${id}', '${nome}', '${encrypt(senha)}', '${nascimento}', '${email}')
       `);
-      res.status(200).send(response.rows);
+      res.json(response.rows);
+      await client.end();
+    } catch (err) {
+      console.error(err);
+    }
+  },
+  async delete_by_id(req, res) {
+    try {
+      const {id} = req.body;
+      const response = await client.query(`DELETE FROM cliente 
+      WHERE id_cliente = '${id}'
+      `);
+      res.json(response.rows);
       await client.end();
     } catch (err) {
       console.error(err);
