@@ -1,12 +1,12 @@
-const db_config = require("../config/database_config.js");
+const database_env = require("../config/database_config.js");
 const {Client} = require("pg");
 
 const client = new Client({
-  host: db_config.host,
-  user: db_config.user,
-  port: db_config.port,
-  password: db_config.password,
-  database: db_config.database
+  host: database_env.host,
+  user: database_env.user,
+  port: database_env.port,
+  password: database_env.password,
+  database: database_env.database
 });
 
 client.connect();
