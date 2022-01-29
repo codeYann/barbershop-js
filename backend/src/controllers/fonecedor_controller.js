@@ -5,13 +5,13 @@ module.exports = {
     try {
       const response = await client.query(`SELECT * FROM fornecedor`);
       res.status(200).json(response.rows);
-    } catch (err) { 
+    } catch (err) {
       console.err(err);
     }
   },
   async store(req, res) {
     try {
-      const {id, cnpj, nome} = req.body;
+      const { id, cnpj, nome } = req.body;
       const response = await client.query(`INSERT INTO fornecedor
       (id_fornecedor, cnpj, nome_fornecedor) 
       VALUES('${id}', '${cnpj}', '${nome}')
@@ -24,7 +24,7 @@ module.exports = {
   },
   async delete_by_id(req, res) {
     try {
-      const {id} = req.body;
+      const { id } = req.body;
       const response = await client.query(`DELETE FROM fornecedor
       WHERE id_fornecedor = '${id}'
       `);
@@ -33,5 +33,5 @@ module.exports = {
     } catch (err) {
       console.error(err);
     }
-  }
-}
+  },
+};
