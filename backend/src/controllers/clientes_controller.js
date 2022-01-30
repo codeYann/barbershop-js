@@ -2,7 +2,11 @@ const client = require("../database/connection.js");
 const crypto = require("crypto");
 
 const encrypt = (text) => {
-  const cipher = crypto.createCipheriv("aes-256-ctr", "vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3", crypto.randomBytes(16));
+  const cipher = crypto.createCipheriv(
+    "aes-256-ctr",
+    "vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3",
+    crypto.randomBytes(16)
+  );
   const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
   return encrypted.toString("hex");
 };
@@ -25,7 +29,9 @@ module.exports = {
       const { id, nome, email, senha, nascimento } = req.body;
       const response = await client.query(`INSERT INTO cliente 
       (id_cliente, nome_cliente, senha, dt_nascimento, email) 
-      VALUES('${id}', '${nome}', '${encrypt(senha)}', '${nascimento}', '${email}')
+      VALUES('${id}', '${nome}', '${encrypt(
+        senha
+      )}', '${nascimento}', '${email}')
       `);
       res.json(response.rows);
     } catch (err) {

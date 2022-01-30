@@ -1,7 +1,6 @@
 body {
   margin: 0;
   font-family: "Noto Sans";
-  background-color: #f0ffffde;
 }
 
 .main-container {
@@ -14,7 +13,7 @@ body {
     "menu content"
     "menu footer";
   padding: 20;
-  background: #f0ffffde;
+  background: #fafcf9;
 }
 
 .content-header {
