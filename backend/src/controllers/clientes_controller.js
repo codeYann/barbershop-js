@@ -28,7 +28,6 @@ module.exports = {
       VALUES('${id}', '${nome}', '${encrypt(senha)}', '${nascimento}', '${email}')
       `);
       res.json(response.rows);
-      await client.end();
     } catch (err) {
       console.error(err);
     }
@@ -40,7 +39,6 @@ module.exports = {
       WHERE id_cliente = '${id}'
       `);
       res.json(response.rows);
-      await client.end();
     } catch (err) {
       console.error(err);
     }

@@ -17,7 +17,6 @@ module.exports = {
       VALUES('${id}', '${cnpj}', '${nome}')
       `);
       res.json(response.rows);
-      await client.end();
     } catch (err) {
       console.error(err);
     }
@@ -29,7 +28,6 @@ module.exports = {
       WHERE id_fornecedor = '${id}'
       `);
       res.json(response.rows);
-      await client.end();
     } catch (err) {
       console.error(err);
     }
