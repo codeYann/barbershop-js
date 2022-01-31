@@ -69,17 +69,6 @@
           >
             Remover fornecedor
           </a>
-          <a
-            class="btn btn-info"
-            id="btn-udpate-fornecedor"
-            data-bs-toggle="collapse"
-            href="#update-fornecedor-collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="update-fornecedor-collapse"
-          >
-            Atualizar informações
-          </a>
         </p>
 
         <div class="collapse" id="insert-fornecedor-collapse">
@@ -87,13 +76,11 @@
             <thead>
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Preço</th>
-                <th scope="col">Quantidade</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Id Fornecedor</th>
+                <th scope="col">CNPJ</th>
+                <th scope="col">Nome do fornecedor</th>
               </tr>
             </thead>
-            <tbody class="tbody-product"></tbody>
+            <tbody class="tbody-fornecedor"></tbody>
           </table>
         </div>
 
@@ -101,58 +88,36 @@
           class="collapse"
           id="post-fornecedor-collapse"
           method="post"
-          autocomplete="of"
+          autocomplete="off"
         >
           <div class="mb-3">
-            <label for="post-id-product" class="form-label">Id</label>
+            <label for="post-id-fornecedor" class="form-label">Id</label>
             <input
               type="text"
               name="id"
               class="form-control"
-              id="post-id-product"
+              id="post-id-fornecedor"
             />
           </div>
           <div class="mb-3">
-            <label for="post-preco-product" class="form-label">Preço</label>
+            <label for="post-cpnj-fornecedor" class="form-label">CNPJ</label>
             <input
               type="text"
-              name="preco"
+              name="cnpj"
               class="form-control"
-              id="post-preco-product"
+              id="post-cpnj-fornecedor"
             />
           </div>
           <div class="mb-3">
-            <label for="post-qtd-product" class="form-label">Quantidade</label>
-            <input
-              type="text"
-              name="qtd"
-              class="form-control"
-              id="post-qtd-product"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="post-nome-product" class="form-label"
-              >Nome do produto</label
-            >
+            <label for="post-nome-fornecedor" class="form-label">Nome</label>
             <input
               type="text"
               name="nome"
               class="form-control"
-              id="post-nome-product"
+              id="post-nome-fornecedor"
             />
           </div>
-          <div class="mb-3">
-            <label for="post-fornecedor-product" class="form-label"
-              >Id do forncedor</label
-            >
-            <input
-              type="text"
-              name="id_fornecedor"
-              class="form-control"
-              id="post-fornecedor-product"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary" id="post-products">
+          <button type="submit" class="btn btn-primary" id="post-fornecedor">
             Submit
           </button>
         </form>
@@ -161,58 +126,19 @@
           class="collapse"
           id="remove-fornecedor-collapse"
           method="post"
-          autocomplete="of"
+          autocomplete="off"
         >
           <div class="mb-3">
-            <label for="remove-id-product" class="form-label">Id</label>
+            <label for="remove-id-fornecedor" class="form-label">Id</label>
             <input
               type="text"
               name="id_remove"
               class="form-control"
-              id="remove-id-product"
+              id="remove-id-fornecedor"
+              autocomplete="off"
             />
           </div>
           <button type="submit" class="btn btn-primary" id="remove-products">
-            Submit
-          </button>
-        </form>
-
-        <form
-          class="collapse"
-          id="update-fornecedor-collapse"
-          method="post"
-          autocomplete="of"
-        >
-          <div class="mb-3">
-            <label for="update-id-product" class="form-label">Id</label>
-            <input
-              type="text"
-              name="id_update"
-              class="form-control"
-              id="update-id-product"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="update-qtd-product" class="form-label"
-              >Quantidade</label
-            >
-            <input
-              type="text"
-              name="qtd_update"
-              class="form-control"
-              id="update-qtd-product"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="update-preco-product" class="form-label">Preço</label>
-            <input
-              type="text"
-              name="preco_update"
-              class="form-control"
-              id="update-preco-product"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary" id="update-products">
             Submit
           </button>
         </form>
@@ -228,6 +154,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script src="../scripts/produtos.js"></script>
+    <script src="../scripts/fornecedores.js"></script>
   </body>
 </html>
