@@ -36,6 +36,7 @@
     let forms = document.querySelectorAll(".form-control");
     forms.forEach((item) => {
       data_object[item.name] = item.value;
+      item.value = "";
     });
 
     fetch_backend("http://localhost:3333/produtos", {
@@ -57,6 +58,7 @@
         "Content-Type": "application/json",
       },
     });
+    input_remove.value = "";
   };
 
   const update_product = (event) => {
@@ -76,6 +78,10 @@
         "Content-Type": "application/json",
       },
     });
+
+    id_input.value = "";
+    qtd_input.value = "";
+    preco_input.value = "";
   };
 
   const list_products_btn = document.querySelector("#btn-list-product");
