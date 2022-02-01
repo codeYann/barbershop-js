@@ -10,7 +10,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link href="../styles/main-page.css" rel="stylesheet" />
+    <link href="../styles/home.css" rel="stylesheet" />
     <link href="../styles/reset.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,16 +26,53 @@
         <h1>Home</h1>
       </header>
 
-      <aside class="content-aside">
-        <ul>
-          <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="fornecedor.html">Fornecedores</a></li>
-          <li><a href="clientes.html">Clientes</a></li>
-        </ul>
-      </aside>
-
       <div class="content">
-        <div class="admin-pages"></div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Clientes</h5>
+                <p class="card-text">
+                  Sessão responsável por listar os atuais clientes cadastrados
+                  no banco de dados
+                </p>
+                <a href="clientes.html" class="btn btn-outline-success"
+                  >Ir para página</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Produtos</h5>
+                <p class="card-text">
+                  Sessão responsável por listar, adicionar, remover e alterar um
+                  produto
+                </p>
+                <a href="produtos.html" class="btn btn-outline-danger"
+                  >Ir para página</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Fornecedores</h5>
+                <p class="card-text">
+                  Sessão responsável por listar, cadastrar, remover e alterar um
+                  fornecedor
+                </p>
+                <a href="fornecedor.html" class="btn btn-outline-primary"
+                  >Ir para página</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <footer class="content-footer">
