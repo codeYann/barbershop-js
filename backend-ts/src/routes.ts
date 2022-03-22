@@ -1,4 +1,5 @@
 import { Request, Response, Router } from "express";
+import clienteController from "./controllers/clientesController";
 
 class Routes {
   public router: Router;
@@ -9,13 +10,11 @@ class Routes {
   }
 
   public getRoutes(): void {
-    this.router.get("/", (_: Request, res: Response) => {
-      res.json({ ola: "Mundo!" });
-    });
+    this.router.get("/", (req, res) => res.json({ ola: "mundo" }));
+    this.router.get("/clientes", new clienteController().index);
   }
 
-  public postRoutes(): void {
-  }
+  public postRoutes(): void {}
 }
 
 export default new Routes().router;
