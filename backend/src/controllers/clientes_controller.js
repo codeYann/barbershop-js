@@ -54,8 +54,7 @@ module.exports = {
       const response = await client.query(`SELECT 
         nome_cliente, email, nome, preco
         FROM cliente, produto, compras
-        and id_produto = idProduto`
-      );
+        and id_produto = idProduto`);
       res.json(response.rows);
     } catch (err) {
       console.log(err);
