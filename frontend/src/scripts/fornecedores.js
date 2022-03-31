@@ -10,7 +10,7 @@
   const list_fornecedores = async (event) => {
     event.preventDefault();
     const fornecedores_request = await fetch(
-      "http://localhost:3333/fornecedor"
+      "http://localhost:3333/fornecedor",
     );
     const data = await fornecedores_request.json();
 
@@ -65,10 +65,10 @@
 
   const list_fornecedores_btn = document.querySelector("#btn-list-fornecedor");
   const post_fornecedores_form = document.querySelector(
-    "#post-fornecedor-collapse"
+    "#post-fornecedor-collapse",
   );
   const remove_fornecedor_form = document.querySelector(
-    "#remove-fornecedor-collapse"
+    "#remove-fornecedor-collapse",
   );
 
   list_fornecedores_btn.addEventListener("click", list_fornecedores);
