@@ -26,7 +26,9 @@
     event.preventDefault();
     const tbody = document.querySelector(".tbody-cash");
 
-    const product_request = await fetch("http://localhost:3333/funcionarios/cash");
+    const product_request = await fetch(
+      "http://localhost:3333/funcionarios/cash",
+    );
     const data = await product_request.json();
     console.log(data);
 
@@ -42,10 +44,11 @@
       }
       tbody.appendChild(tr);
     });
+  };
 
-  }
-
-  const list_funcionarios_btn = document.querySelector("#btn-list-funcionarios");
+  const list_funcionarios_btn = document.querySelector(
+    "#btn-list-funcionarios",
+  );
   const list_cash_btn = document.querySelector("#btn-cash-funcionarios");
   list_funcionarios_btn.addEventListener("click", list_funcionarios);
   list_cash_btn.addEventListener("click", cash_info);
